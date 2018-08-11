@@ -11,7 +11,7 @@ function setup() {
 function delay(time){
     return new Promise((resolve, reject) => {
         if(isNaN(time)) {
-            reject();
+           return reject(new Error('delay requires a valid number'));
         }
         setTimeout(resolve, time);
     })
